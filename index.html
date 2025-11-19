@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EletroServe Solutions</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EletroServe Solutions — Reliable Electrical Services</title>
+  <meta name="description" content="EletroServe Solutions: residential wiring, commercial projects, maintenance & repair. Affordable, reliable electricians near you." />
+  <meta name="keywords" content="electrician, electrical services, residential wiring, commercial electrical, electrical maintenance, EletroServe" />
   <link rel="stylesheet" href="style.css">
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <!-- Leaflet (map) CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="" crossorigin=""/>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"EletroServe Solutions",
+    "description":"Reliable electrical services for homes and businesses.",
+    "url":"https://example.com",
+    "telephone":"+27-000-000-000",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"123 Main St",
+      "addressLocality":"City",
+      "addressRegion":"Province",
+      "postalCode":"0000",
+      "addressCountry":"ZA"
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="container">
@@ -19,55 +42,77 @@
         </div>
       </div>
       <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
+        <a href="enquiry.html">Enquiry</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <!-- Main content -->
     <main>
-      <!-- Hero Section -->
+      <!-- Hero -->
       <section class="hero">
-        <img src="images/eletrician.jfif" width="900" height="600" alt="hero" class="hero-img">
-        <div class="hero-text">
-          
-          <p></p>
+        <img src="images/eletrician.jfif" alt="Electrician at work" class="hero-img" width="1200" height="600">
+        <div class="hero-overlay">
+          <h2>Fast, safe and affordable electrical solutions</h2>
+          <p>From residential wiring to commercial installations — we keep the lights on.</p>
+          <div class="hero-ctas">
+            <a href="services.html" class="btn">View Services</a>
+            <a href="enquiry.html" class="btn outline">Get a Quote</a>
+          </div>
         </div>
-        <aside>
-          <div class="hero-img-placeholder"></div>
-        </aside>
       </section>
 
-      <!-- Services Preview -->
+      <!-- Search + Services preview (dynamically populated) -->
       <section class="services-preview">
         <div class="section-title">
           <h3>Our Core Services</h3>
-        </div>
-        <div class="grid services-grid">
-          <div class="card">
-            <h4>Residential Wiring</h4>
-            <p>Safe and modern electrical installations for every home.</p>
-          </div>
-          <div class="card">
-            <h4>Commercial Projects</h4>
-            <p>Efficient electrical systems for offices, stores, and factories.</p>
-          </div>
-          <div class="card">
-            <h4>Maintenance & Repair</h4>
-            <p>Quick troubleshooting, repairs, and system upgrades.</p>
+          <div class="search-row">
+            <input id="serviceSearch" type="search" placeholder="Search services..." aria-label="Search services">
           </div>
         </div>
-        <a class="btn" href="services.html">View All Services</a>
+
+        <div id="servicesGrid" class="grid services-grid" aria-live="polite">
+          <!-- JS will populate cards here -->
+        </div>
+
+        <div class="center">
+          <a class="btn" href="services.html">View All Services</a>
+        </div>
+      </section>
+
+      <!-- FAQ accordion -->
+      <section class="faq">
+        <h3>Frequently Asked Questions</h3>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="acc-btn">Do you provide emergency repairs?</button>
+            <div class="acc-panel">Yes — we offer 24/7 emergency callouts. Response time varies by location.</div>
+          </div>
+          <div class="accordion-item">
+            <button class="acc-btn">Are your technicians certified?</button>
+            <div class="acc-panel">All our electricians are licensed and insured.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map -->
+      <section class="map-section">
+        <h3>Service Area</h3>
+        <div id="map" style="height:300px;border-radius:8px;overflow:hidden"></div>
       </section>
     </main>
 
-    <!-- Footer -->
     <footer>
       <div class="muted-small">© EletroServe Solutions — All rights reserved.</div>
+      <div class="footer-links">
+        <a href="sitemap.xml">Sitemap</a> · <a href="robots.txt">Robots</a>
+      </div>
     </footer>
   </div>
-  <script src="script.js"></script>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="" crossorigin=""></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
