@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services — EletroServe Solutions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | EletroServe Solutions</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Explore EletroServe Solutions' full range of electrical services including residential wiring, commercial projects, and maintenance & repair.">
 </head>
 <body>
-
-  <!-- Header -->
   <div class="container">
+    <!-- Header / Nav -->
     <header>
       <div class="brand">
         <div class="logo">ES</div>
@@ -21,51 +21,37 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="services.html">Services</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="enquiry.html">Enquiry</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
+
+    <main>
+      <section class="services-section">
+        <h1>Our Services</h1>
+        <p>We provide professional electrical services for homes, businesses, and more. Browse our offerings below and request a quote.</p>
+
+        <!-- Search bar -->
+        <div class="search-row">
+          <input id="serviceSearch" type="search" placeholder="Search services..." aria-label="Search services">
+        </div>
+
+        <!-- Services Grid -->
+        <div id="servicesGrid" class="grid services-grid" aria-live="polite">
+          <!-- JS dynamically adds service cards -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="muted-small">© EletroServe Solutions — All rights reserved.</div>
+      <div class="footer-links">
+        <a href="sitemap.xml">Sitemap</a> · <a href="robots.txt">Robots</a>
+      </div>
+    </footer>
   </div>
 
-  <!-- Services Section -->
-  <section class="services">
-    <h2>Our Services</h2>
-
-    <div class="service">
-      <img src="images/image 1.jpg" width="500" height="400" alt="Residential wiring service example">
-      <h3>Residential Wiring</h3>
-      <p class="price">R4500</p>
-    </div>
-
-    <div class="service">
-      <img src="images/corm.jpg" width="500" height="400" alt="Commercial electrical project example">
-      <h3>Commercial Electrical Projects</h3>
-      <p class="price">R5000</p>
-    </div>
-
-    <div class="service">
-      <img src="images/electrical-safety-inspection.jpg" width="500" height="400" alt="eletrical safety inspection">
-      <h3>Eletrical safety inspection</h3>
-      <p class="price">R3500</p>
-    </div>
-
-    <div class="service">
-      <img src="images/maintanance.jpg" width="500" height="400" alt="maintance & repairs">
-      <h3>maintance & repairs</h3>
-      <p class="price">R4000</p>
-    </div>
-
-    <div class="service">
-      <img src="images/Lightning-Solutions.png" width="500" height="400" alt="lightning solutions">
-      <h3>lightning solutions</h3>
-      <p class="price">R4000</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="muted-small">© EletroServe Solutions — All rights reserved.</div>
-  </footer>
-
+  <script src="script.js" defer></script>
 </body>
 </html>
