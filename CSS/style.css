@@ -1,88 +1,96 @@
+/* Base */
+:root{
+  --brand:#4a90e2;
+  --accent:#f5a623;
+  --danger:#d9534f;
+  --muted:#666;
+  --bg:#f2f2f2;
+}
+*
+/* Global background for all pages */
 body {
-    background-image: url(images/hollon.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Montserrat', sans-serif;
-    color: black;
-    line-height: 1.6;
-    margin: 0;
-    background-color: transparent;
-  }
-  
-  .container { max-width: 1200px; margin: auto; padding: 20px; }
-  
-  header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
-  .brand { display: flex; align-items: center; gap: 10px; }
-  .logo { font-weight: 900; font-size: 2rem; color:#ff6600; }
-  nav a { margin: 0 10px; text-decoration: none; color: #000; font-weight: 600; }
-  nav a:hover { color: #ff6600; }
-  
-  .hero { 
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: grid; 
-    grid-template-columns: 1fr 400px; 
-    gap: 20px; 
-    background:transparent; 
-    border-radius: 12px; 
-    padding: 20px; /* ← add value */
-  }
-  
-  .hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    text-align: center;
-    color: white;
-    font-family: 'montserrat', sans-serif;
-    padding:20px;
-    background-color: rgba(0,0,0,0.5);
-    border-radius: 8px;
-
-  }
-
-    .services h3 {
-        margin-top: 10px;
-        font-size: 20px;
-        color: #ffcc00; /* yellow */
-      }
-      
-      
-      
-      .service {
-        text-align: center;
-        background: #fff;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      }
-      
-
-.service img{
-    width: 200px;
-    height:auto;
-    border-radius: 10px;
+  font-family: "Montserrat", Arial, sans-serif;
+  margin: 0;
+  color: #222;
+  background: url(images/hollon.webp) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
 }
 
-.services h3 {
-    margin-top: 10px;
-    font-size: 20px;
+/* Optional: add semi-transparent overlay for readability */
+.container {
+  background: rgba(255, 255, 255, 0.85); /* slightly transparent white */
+  padding: 16px;
+  border-radius: 8px;
 }
 
-.price{
-    font-weight:bold;
-    font-size: 18px;
-    color: #333;
+
+/* Header */
+header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{background:var(--brand);color:#fff;width:56px;height:56px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.brand h1{margin:0;font-size:1.1rem}
+.muted-small{color:var(--muted);font-size:0.9rem}
+
+/* Nav */
+nav{display:flex;gap:10px}
+nav a{color:#333;text-decoration:none;padding:8px 12px;border-radius:6px}
+nav a.active{background:#e9f2ff;color:var(--brand)}
+
+/* Hero */
+.hero{position:relative;border-radius:8px;overflow:hidden;margin:12px 0}
+.hero-img{width:100%;height:auto;display:block;filter:contrast(95%) saturate(95%)}
+.hero-overlay{position:absolute;left:24px;top:24px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.5)}
+.hero-ctas{margin-top:12px;display:flex;gap:8px}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;background:var(--brand);color:#fff;text-decoration:none}
+.btn.outline{background:transparent;border:2px solid #fff}
+
+/* Services grid */
+.section-title{display:flex;align-items:center;justify-content:space-between}
+.search-row input{padding:8px;border-radius:6px;border:1px solid #ccc}
+.grid{display:grid;gap:12px}
+.services-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:12px}
+.card{background:#fff;padding:16px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.05);transition:transform .18s}
+.card:hover{transform:translateY(-6px)}
+
+.center{text-align:center;margin-top:12px}
+
+/* Gallery */
+.gallery-section{margin-top:20px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.gallery-grid img{width:100%;height:120px;object-fit:cover;border-radius:6px;cursor:pointer;transition:transform .12s}
+.gallery-grid img:hover{transform:scale(1.03)}
+
+/* Lightbox (JS-controlled) */
+.lightbox{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:9999;
+}
+.lightbox img{max-width:94%;max-height:88%;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+.lightbox .close{position:absolute;top:14px;right:18px;background:#fff;border-radius:50%;padding:6px;cursor:pointer}
+
+/* Accordion */
+.accordion .acc-btn{width:100%;text-align:left;background:#fff;border:none;padding:14px;border-radius:6px;margin-bottom:6px;cursor:pointer}
+.acc-panel{display:none;padding:12px;background:#fafafa;border-radius:6px;margin-bottom:8px}
+
+/* Map */
+#map{width:100%;border-radius:8px;margin-top:8px}
+
+/* Forms */
+form{background:#fff;padding:16px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.04);max-width:720px;margin:14px auto}
+label{display:block;margin-bottom:10px;font-size:0.95rem}
+input[type="text"],input[type="email"],input[type="tel"],input[type="number"],select,textarea{
+  width:100%;padding:10px;border-radius:6px;border:1px solid #ddd;margin-top:6px;font-size:0.95rem
+}
+.form-actions{display:flex;gap:8px;align-items:center;margin-top:8px}
+.feedback{margin-top:12px;color:var(--muted)}
+
+/* small screens */
+@media (max-width:700px){
+  header{flex-direction:column;align-items:flex-start}
+  nav{flex-wrap:wrap}
+  .hero-overlay{left:12px;top:12px}
 }
 
+/* Accessibility focus */
+a:focus,input:focus,button:focus{outline:3px solid rgba(74,144,226,0.2);outline-offset:2px}
