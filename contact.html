@@ -1,55 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — EletroServe Solutions</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | EletroServe Solutions</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-<header>
-  <div class="brand">
-    <div class="logo">ES</div>
-    <div>
-      <h1>EletroServe Solutions</h1>
-      <div class="muted-small">Reliable Electrical Services • Affordable Prices</div>
-    </div>
+  <div class="container">
+    <!-- Header / Nav -->
+    <header>
+      <div class="brand">
+        <div class="logo">ES</div>
+        <div>
+          <h1>EletroServe Solutions</h1>
+          <div class="muted-small">Reliable Electrical Services • Affordable Prices</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content-section">
+        <h1>Contact Us</h1>
+        <p>Prefer email? Use the form below or email <a href="mailto:info@eletroserve.example">info@eletroserve.example</a>.</p>
+
+        <form id="contactForm" novalidate>
+          <label>
+            Full name
+            <input type="text" name="name" id="name" required minlength="2">
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" id="email" required>
+          </label>
+
+          <label>
+            Phone
+            <input type="tel" name="phone" id="phone" pattern="[\d\s+()-]{7,20}" placeholder="+27 012 345 6789">
+          </label>
+
+          <label>
+            Message type
+            <select id="msgType" name="msgType" required>
+              <option value="">-- choose --</option>
+              <option>General enquiry</option>
+              <option>Request a quote</option>
+              <option>Support</option>
+            </select>
+          </label>
+
+          <label>
+            Message
+            <textarea id="message" name="message" rows="6" required minlength="10"></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Send Message</button>
+            <button type="button" id="sendMailBtn" class="btn outline">Open Mail Client</button>
+          </div>
+
+          <div id="contactFeedback" class="feedback" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
   </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
 
-<main>
-<section id="contact">
-  <div class="section-title"><h3>Contact Us</h3></div>
-  <div class="contact-grid">
-    <div>
-      <form id="contactForm" onsubmit="return false;">
-        <input id="name" placeholder="Your Name" required />
-        <input id="email" placeholder="Your Email" required />
-        <textarea id="message" placeholder="How can we help you?" rows="5" required></textarea>
-        <button class="btn" id="sendMsg">Send Message</button>
-        <div id="formMsg" class="muted-small"></div>
-      </form>
-    </div>
-    <aside class="card">
-      <h4>Contact Information</h4>
-      <p>Email: <a href="mailto:eletroSolutions@gmail.com">eletroSolutions@gmail.com</a></p>
-      <p>Phone: <a href="tel:+276671236589">+27 667 123 6589</a></p>
-    </aside>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="muted-small">© EletroServe Solutions — All rights reserved.</div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
