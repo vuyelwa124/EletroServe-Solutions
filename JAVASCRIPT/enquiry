@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enquiry | EletroServe Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header / Nav -->
+    <header>
+      <div class="brand">
+        <div class="logo">ES</div>
+        <div>
+          <h1>EletroServe Solutions</h1>
+          <div class="muted-small">Reliable Electrical Services • Affordable Prices</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="enquiry.html" class="active">Enquiry</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content-section">
+        <h1>Make an Enquiry</h1>
+        <p>Select the kind of enquiry and fill in required fields. We'll estimate cost or availability.</p>
+
+        <form id="enquiryForm" novalidate>
+          <label>
+            Enquiry type
+            <select id="enqType" required>
+              <option value="">-- choose --</option>
+              <option value="service">Service quote</option>
+              <option value="volunteer">Volunteer</option>
+              <option value="sponsor">Sponsorship</option>
+            </select>
+          </label>
+
+          <div id="serviceFields" class="conditional">
+            <label>
+              Service required
+              <select id="serviceSelect">
+                <option value="residential">Residential wiring</option>
+                <option value="commercial">Commercial project</option>
+                <option value="maintenance">Maintenance & Repair</option>
+              </select>
+            </label>
+
+            <label>
+              Approx. property size (m²)
+              <input id="area" type="number" min="1" placeholder="e.g. 100">
+            </label>
+          </div>
+
+          <label>
+            Name
+            <input id="enqName" type="text" required minlength="2">
+          </label>
+
+          <label>
+            Email
+            <input id="enqEmail" type="email" required>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Get Estimate</button>
+          </div>
+
+          <div id="enqResult" class="feedback" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
